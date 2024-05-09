@@ -1,0 +1,32 @@
+.header{
+    width: 100vw;
+    height: 70px;
+    padding: 0px 50px;
+    background-color: var(--text-black);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--text-white);
+    border-bottom: 7px solid var(--main2);
+}
+
+.logo{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.menu ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    list-style: none;
+}
+
+.menu ul li{
+    margin-left: 50px;
+}
+.menu ul li a{
+    text-decoration: none;
+    color: var(--text-white);
+    font-weight: 400;
+}

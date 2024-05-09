@@ -1,0 +1,20 @@
+.title_box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 20%;
+    margin-top: 5%;
+}
+
+.title_box h1{
+    font-family: 'Cormorant Upright', sans-serif;
+    font-size: 5rem;
+    font-weight: 500;
+}
+
+.title_box h2{
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
+}

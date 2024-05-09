@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
+
 *{
   margin: 0px;
   padding: 0px;
@@ -5,15 +8,15 @@
   --background: #F6F3EC;
   --foreground: #FFFFFF;
   --main: #15626A;
-  --main2: #679599;
-  --text-white: #C2B79D;
+  --main2: #C2B79D;
+  --text-white: #F2F2F2;
+  --text-color: #C2B79D;
   --text-black: #232324;
   --text-gray: #949592;
+  font-family: 'Poppins', sans-serif;
 }
 
-
 body {
-  margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
