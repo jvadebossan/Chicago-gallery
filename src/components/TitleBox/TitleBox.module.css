@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0px 20%;
+    padding: 0px 25%;
     margin-top: 5%;
 }
 
@@ -11,9 +11,11 @@
     font-family: 'Cormorant Upright', sans-serif;
     font-size: 5rem;
     font-weight: 500;
+    text-align: center;
 }
 
 .title_box h2{
+    margin-top: 2%;
     font-size: 1rem;
     font-weight: 400;
     text-align: center;

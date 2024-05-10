@@ -7,12 +7,14 @@
   box-sizing: border-box;
   --background: #F6F3EC;
   --foreground: #FFFFFF;
+  --background2:#e7e0cf; 
   --main: #15626A;
   --main2: #C2B79D;
   --text-white: #F2F2F2;
   --text-color: #C2B79D;
   --text-black: #232324;
-  --text-gray: #949592;
+  --text-gray: #868784;
+  --shadow: #23232414;
   font-family: 'Poppins', sans-serif;
 }
 
