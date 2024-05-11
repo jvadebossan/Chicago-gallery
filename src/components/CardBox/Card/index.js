@@ -1,20 +1,21 @@
 import style from './Card.module.css';
 
-import { useState, useEffect } from 'react';
+//import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const Card = ({data}) => {
 
-    console.log(data.image_id);
-
-
     return (
         <div className={style.card}>
-            <div className={style.img_box}>
-                <img src={`https://www.artic.edu/iiif/2/${data.image_id}/full/300,/0/default.jpg`} alt="placeholder" />
-            </div>
+            <Link to={`/artwork/${data.id}`} className={style.img_box}>
+                <img 
+                    src={`https://www.artic.edu/iiif/2/${data.image_id}/full/300,/0/default.jpg`} 
+                    alt={'artwork without image'} 
+                />
+            </Link>
             <div className={style.card_text}>
-                <h2>{data.title}</h2>
-                <p>{data.date_start} - {data.date_end}</p>
+                <h2>{`Title: ${data.title}`}</h2>
+                <p>{`Displayed in ${data.date_display}`}</p>
             </div>
         </div>
     );
