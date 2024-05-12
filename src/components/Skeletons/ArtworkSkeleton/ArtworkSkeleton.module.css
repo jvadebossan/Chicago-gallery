@@ -104,4 +104,29 @@
     }
 }
 
+@media only screen and (min-width: 300px) and (max-width: 1000px){
+    .artwork_container{
+        padding: 3% 20px;
+    }
+}
+
+@media only screen and (min-width: 300px) and (max-width: 670px){
+    .artwork_container{
+        padding: 3% 20px;
+    }
+    .artwork_container .artwork_text{
+        padding-left: 0px;
+    }
+
+}
+
+@media only screen and (min-width: 300px) and (max-width: 450px){
+    .artwork_container .img_box{
+        width: 90%;
+    }
+    .artwork_container .img_box img{
+        max-width: 250px;
+    }
+}
+
 

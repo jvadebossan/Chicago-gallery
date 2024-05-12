@@ -63,30 +63,25 @@
     }
 }
 
-@media only screen and (min-width: 400px) and (max-width: 450px){
+
+@media only screen and (min-width: 300px) and (max-width: 600px){
     .card{
-        width: 110%;
-    }
-    
-    .card span{
-        height: 20px;
+        width: 100%;
     }
 }
 
 @media only screen and (min-width: 300px) and (max-width: 400px){
-    .card{
-        width: 120%;
-    }
 
     .img_box{
         max-width: 300px;
     }
 
     .img_box img{
-        max-width: 250px;
+        max-width: 220px;
     }
 
     .card span{
         height: 20px;
     }
 }
+
