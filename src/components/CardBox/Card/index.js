@@ -4,6 +4,8 @@ import favorite_icon from '../../../assets/imgs/favorite_icon.png';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import without_img_placeholder from '../../../assets/imgs/without_img.png';
+
 const Card = ({data}) => {
 
     const [favorited, setFavorited] = useState(false);
@@ -20,12 +22,12 @@ const Card = ({data}) => {
             setFavorited(true);
         }
 	}
-
+    console.log()
     return (
         <div className={style.card}>
             <Link to={`/artwork/${data.id}`} className={style.img_box}>
                 <img 
-                    src={`https://www.artic.edu/iiif/2/${data.image_id}/full/300,/0/default.jpg`} 
+                    src={data.image_id === null ? without_img_placeholder :`https://www.artic.edu/iiif/2/${data.image_id}/full/300,/0/default.jpg`} 
                     alt={'artwork without image'} 
                 />
             </Link>
