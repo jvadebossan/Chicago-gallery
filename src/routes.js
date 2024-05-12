@@ -3,7 +3,6 @@ import Home from "./pages/Home";
 import Error from "./pages/Error";
 import Artwork from "./pages/Artwork";
 
-
 function AppRoutes() {
 	return (
 		<BrowserRouter>

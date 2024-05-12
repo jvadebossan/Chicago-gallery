@@ -15,7 +15,7 @@ const Card = ({data}) => {
             </Link>
             <div className={style.card_text}>
                 <h2>{`Title: ${data.title}`}</h2>
-                <p>{`Displayed in ${data.date_display}`}</p>
+                <p>{`Dated from ${data.date_display}`}</p>
             </div>
         </div>
     );

@@ -3,6 +3,7 @@ import Header from '../../components/Header';
 import Container from '../../components/Container';
 import Error from '../Error'
 import Info from '../../components/Info';
+import ArtworkSkeleton from '../../components/Skeletons/ArtworkSkeleton';
 
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
@@ -18,11 +19,14 @@ import type_icon from '../../assets/imgs/type_icon.png';
 const Artwork = () => {
 
 	const { id } = useParams();
+	const [loading, set_loading] = useState(true);
 	const [art_data, set_art_data] = useState({ 'data': [] });
 
 	//console.log(id);
 	useEffect(() => {
 		const fetch_data = async () => {
+			set_art_data({ 'data': [] });
+			set_loading(true);
 			const response = await fetch(`https://api.artic.edu/api/v1/artworks/${id}?fields=id,title,image_id,thumbnail,date_start,date_end,date_display,artist_display,place_of_origin,description,short_description,dimensions,medium_display,artwork_type_title,artist_titles,style_title&limit=6`)
 				.then(res => res.json())
 				.then(data => data)
@@ -31,6 +35,7 @@ const Artwork = () => {
 					return <Error />;
 				})
 			set_art_data(response);
+			set_loading(false);
 		}
 		fetch_data();
 	}, []);
@@ -40,11 +45,10 @@ const Artwork = () => {
 		return <Error />;
 	}
 
-	if(art_data.data.description === null){
-		console.log('r')
-	}
-
+	console.log(loading)
 	return (
+		<>
+		{loading ? <ArtworkSkeleton /> : 
 		<Container background={'foreground'} height={100} >
 			<Header />
 			<div className={style.artwork_container}>
@@ -53,7 +57,7 @@ const Artwork = () => {
 						<img src={`https://www.artic.edu/iiif/2/${art_data.data.image_id}/full/400,/0/default.jpg`} alt="placeholder" />
 					</div>
 					<div className={style.artwork_text}>
-						<h2>{art_data.data.title}</h2>
+						<h2>{`Title: ${art_data.data.title}`}</h2>
 						<Info 
 							icon={author_icon} 
 							text={`Author: ${art_data.data.artist_display}`} 
@@ -86,9 +90,10 @@ const Artwork = () => {
 					<p>{art_data.data.description === null ?  'Description not provided by author': art_data.data.description}</p>
 				</div>
 			</div>
-
 		</Container>
-	);
-}
+		}
+		</>
+	)
+};
 
 export default Artwork;

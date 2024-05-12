@@ -1,3 +1,17 @@
+/* hide arrows from input number*/
+.back_next input::-webkit-outer-spin-button,
+.back_next input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.back_next input[type=number] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+
 .card_box{
     width: 100%;
     min-height: 70vh;
@@ -5,7 +19,74 @@
     margin-top: 50px;
     padding: 0px 50px;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+}
+
+.cards{
+    width: 100%;
+    min-height: 70vh;
+    height: auto;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.pagination{
+    width: 100%;
+    height: 35px;
+    padding: 0px 35px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pag_select{
+    flex:1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.select{
+    background-color: var(--main2);
+    width: 10%;
+    min-width: 60px;
+    height: 100%;
+    box-shadow: 0px 5px 5px 2px var(--shadow);
+    border: 0px;
+    border-radius: 7px;
+    font-weight: 500;
+    font-size: 1rem;
+    margin: 0px 5px;
+    outline: hidden;
+}
+
+.back_next{
+    flex:1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.pagination button, .pagination input{
+    text-align: center;
+    background-color: var(--main2);
+    width: 7%;
+    min-width: 60px;
+    height: 100%;
+    box-shadow: 0px 5px 5px 2px var(--shadow);
+    border: 0px;
+    border-radius: 7px;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.1s ease-out;
+    margin: 0px 5px;
+    outline: transparent;
 }
