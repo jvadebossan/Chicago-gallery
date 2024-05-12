@@ -16,18 +16,46 @@ import size_icon from '../../assets/imgs/size_icon.png';
 import type_icon from '../../assets/imgs/type_icon.png';
 
 
+// class FavoriteArtwork{
+// 	constructor(id){
+// 		this.id = id;
+// 	}
+// }
+
+// class FavoriteArtworkList{
+// 	constructor(){
+// 		this.list = [];
+// 	}
+
+// 	addFavorite(artwork){
+// 		this.list.push(artwork);
+// 	}
+// 	get(){
+// 		return JSON.parse(localStorage.getItem('favorites')) || [];
+// 	}
+// 	save(){
+// 		let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+// 		favorites.push(this.id);
+// 		localStorage.setItem('favorites', JSON.stringify(favorites));
+// 	}
+
+// }
+
+
 const Artwork = () => {
 
 	const { id } = useParams();
+	const [favorited, setFavorited] = useState(false);
 	const [loading, set_loading] = useState(true);
 	const [art_data, set_art_data] = useState({ 'data': [] });
 
-	//console.log(id);
+	const url = `https://api.artic.edu/api/v1/artworks/${id}?fields=id,title,image_id,thumbnail,date_start,date_end,date_display,artist_display,place_of_origin,description,short_description,dimensions,medium_display,artwork_type_title,artist_titles,style_title`
+
 	useEffect(() => {
 		const fetch_data = async () => {
 			set_art_data({ 'data': [] });
 			set_loading(true);
-			const response = await fetch(`https://api.artic.edu/api/v1/artworks/${id}?fields=id,title,image_id,thumbnail,date_start,date_end,date_display,artist_display,place_of_origin,description,short_description,dimensions,medium_display,artwork_type_title,artist_titles,style_title&limit=6`)
+			const response = await fetch(url)
 				.then(res => res.json())
 				.then(data => data)
 				.catch(error => {
@@ -45,7 +73,19 @@ const Artwork = () => {
 		return <Error />;
 	}
 
-	console.log(loading)
+	const handleFavorite = (artwork) => {
+		let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+        if (favorites.includes(artwork)) {
+            favorites = favorites.filter(item => item !== artwork);
+            localStorage.setItem('favorites', JSON.stringify(favorites))
+            setFavorited(false);
+        }else{
+            favorites.push(artwork);
+            localStorage.setItem('favorites', JSON.stringify(favorites))
+            setFavorited(true);
+        }
+	}
+
 	return (
 		<>
 		{loading ? <ArtworkSkeleton /> : 
@@ -81,7 +121,8 @@ const Artwork = () => {
 						<input 
 							className={style.favorite_btn} 
 							type="button" 
-							value="Add to favorites" 
+							value={favorited ? 'Remove from favorites' : 'Add to favorites'} 
+							onClick={() => {handleFavorite(art_data.data.id)}}
 						/>
 					</div>
 				</div>

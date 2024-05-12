@@ -9,13 +9,7 @@ function Header() {
 			<nav className={styles.menu}>
 				<ul>
 					<li>
-						<a href="#discover">Discover</a>
-					</li>
-					<li>
-						<a href="#categories">Categories</a>
-					</li>
-					<li>
-						<a href="/favlist">Favorite List</a>
+						<Link to={'/favorited'}>Favorite List</Link>
 					</li>
 				</ul>
 			</nav>
