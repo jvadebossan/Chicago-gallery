@@ -1,5 +1,6 @@
 import style from './Artwork.module.css';
 import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 import Container from '../../components/Container';
 import Error from '../Error'
 import Info from '../../components/Info';
@@ -14,33 +15,6 @@ import date_icon from '../../assets/imgs/date_icon.png';
 import origin_icon from '../../assets/imgs/origin_icon.png';
 import size_icon from '../../assets/imgs/size_icon.png';
 import type_icon from '../../assets/imgs/type_icon.png';
-
-
-// class FavoriteArtwork{
-// 	constructor(id){
-// 		this.id = id;
-// 	}
-// }
-
-// class FavoriteArtworkList{
-// 	constructor(){
-// 		this.list = [];
-// 	}
-
-// 	addFavorite(artwork){
-// 		this.list.push(artwork);
-// 	}
-// 	get(){
-// 		return JSON.parse(localStorage.getItem('favorites')) || [];
-// 	}
-// 	save(){
-// 		let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-// 		favorites.push(this.id);
-// 		localStorage.setItem('favorites', JSON.stringify(favorites));
-// 	}
-
-// }
-
 
 const Artwork = () => {
 
@@ -69,7 +43,7 @@ const Artwork = () => {
 	}, []);
 
 	if (art_data.status === 404) {
-		console.log('Error:', art_data);
+		//console.log('Error:', art_data);
 		return <Error />;
 	}
 
@@ -133,6 +107,7 @@ const Artwork = () => {
 			</div>
 		</Container>
 		}
+		<Footer />
 		</>
 	)
 };

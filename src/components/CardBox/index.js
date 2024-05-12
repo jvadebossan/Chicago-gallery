@@ -19,15 +19,16 @@ const CardBox = ({ url }) => {
 			const response = await fetch(`${url}&page=${page}&limit=${limit}`)
 				.then(res => res.json())
 				.then(data => data);
-				if (response.pagination == undefined) {
-					response.pagination = { 'total_pages': 1 }
-				}
-				if (response.data.length === 0 || response.status === 403) {
-					console.log('No data found')
-					navigate('/error');
-				}
+			if (response.pagination == undefined) {
+				response.pagination = { 'total_pages': 1 }
+			}
+			if (response.data.length === 0 || response.status === 403) {
+				//console.log('No data found')
+				navigate('/error');
+			}
 			set_art_data(response);
 			set_loading(false);
+			
 		}
 		fetch_data();
 

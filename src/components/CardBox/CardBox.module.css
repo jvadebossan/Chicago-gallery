@@ -79,6 +79,7 @@
     background-color: var(--main2);
     width: 7%;
     min-width: 60px;
+    min-height: 35px;
     height: 100%;
     box-shadow: 0px 5px 5px 2px var(--shadow);
     border: 0px;
@@ -89,4 +90,19 @@
     transition: 0.1s ease-out;
     margin: 0px 5px;
     outline: transparent;
+}
+
+@media only screen and (min-width: 300px) and (max-width: 600px){
+    .pagination{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .pag_select, .back_next{
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+    .pagination button{
+        min-width: 40px;
+    }
 }

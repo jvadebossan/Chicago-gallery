@@ -13,7 +13,8 @@ function AppRoutes() {
 				<Route path="/artwork/:id" element={<Artwork />} />
 				<Route path="/search/:query" element={<SearchRes />} />
 				<Route path="/favorited" element={<Favorited />} />
-				<Route path="*" element={<Error />} />
+				<Route path="/erro/:type" element={<Error />} />
+				<Route path="*" element={<Error/>} />
 			</Routes>
 		</BrowserRouter>
 	);

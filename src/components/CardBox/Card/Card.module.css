@@ -19,7 +19,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
     border-radius: 7px;
     cursor: pointer;
 }
@@ -76,4 +75,24 @@
 
 #favorited{
     box-shadow: 0px 0px 10px var(--main);
+}
+
+@media only screen and (min-width: 400px) and (max-width: 450px){
+    .card{
+        width: 110%;
+    }
+}
+
+@media only screen and (min-width: 300px) and (max-width: 400px){
+    .card{
+        width: 120%;
+    }
+
+    .img_box{
+        max-width: 300px;
+    }
+
+    .img_box img{
+        max-width: 250px;
+    }
 }

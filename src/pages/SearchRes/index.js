@@ -1,4 +1,5 @@
 import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 import Container from '../../components/Container';
 import CardBox from '../../components/CardBox';
 import { useParams } from 'react-router-dom';
@@ -15,6 +16,7 @@ function SearchRes() {
       <Container background={'foreground'} height={'100'}>
         <CardBox url={query_url}/>
       </Container>
+      <Footer />
     </>
   );
 }
